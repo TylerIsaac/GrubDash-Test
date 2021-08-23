@@ -8,7 +8,6 @@ const dishes = require(path.resolve("src/data/dishes-data"));
 // Use this function to assign ID's when necessary
 const nextId = require("../utils/nextId");
 
-//////MIDDLEWARE FUNCTIONS//////
 function requiredFieldsValidator(req, res, next) {
   const requiredFields = ["name", "description", "price", "image_url"];
   const data = req.body.data || {};
@@ -65,7 +64,6 @@ function idValidator(req, res, next) {
   next();
 }
 
-//////CRUD Functions//////
 const list = (req, res, next) => {
   res.json({ data: dishes });
 };

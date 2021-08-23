@@ -6,7 +6,6 @@ const orders = require(path.resolve("src/data/orders-data"));
 // Use this function to assigh ID's when necessary
 const nextId = require("../utils/nextId");
 
-// MIDDLEWARE
 function requiredFieldsValidator(req, res, next) {
   const requiredFields = ["deliverTo", "mobileNumber", "dishes"];
   const data = req.body.data || {};
@@ -90,7 +89,6 @@ function validateStatus(req, res, next) {
   next();
 }
 
-//CRUD
 const list = (req, res, next) => {
   res.json({ data: orders });
 };
